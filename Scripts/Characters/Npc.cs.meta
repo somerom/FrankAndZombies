@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1438496265d7fb04390c861b44d62a6e
+timeCreated: 1511169226
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Cody: {fileID: 4654754423113628, guid: bfaa7c02c8129054ba668d23032aa89c, type: 2}
+  - Marilyn: {fileID: 4366653111197506, guid: 0fcd01054a7fa6849ab4db13a3c08b5a, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
