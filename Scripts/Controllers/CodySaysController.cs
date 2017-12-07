@@ -6,19 +6,12 @@ using UnityEngine.UI;
 
 public class CodySaysController : MonoBehaviour {
 
-    // Use this for initialization
-
     public int position = 0;
     private GameObject m1;
     private GameObject m2;
     private GameObject m3;
     private GameObject m4;
     private GameObject m5;
-
-
-
-
-
 
     private Button ok;
     void Start()
@@ -36,11 +29,7 @@ public class CodySaysController : MonoBehaviour {
         m5.SetActive(false);
         ok.onClick.AddListener(() => ButtonPressed());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
+		
     public void ButtonPressed()
     {
         if (position == 0)

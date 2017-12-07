@@ -36,10 +36,6 @@ public class MarilynSaysController : MonoBehaviour {
         ok.onClick.AddListener(()=>ButtonPressed());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
     public void ButtonPressed()
     {
         if(position == 0)

@@ -81,8 +81,6 @@ public class Enemy : MonoBehaviour {
 	}
 	
 
-	void Update () {
-	}
 	/// <summary>
 	/// Raises the collision enter2 d event.
 	/// If a zombie is hit with a burger the movement script
