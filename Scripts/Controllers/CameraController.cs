@@ -6,8 +6,23 @@ public class CameraController : MonoBehaviour {
 
     public GameObject player;
     private Vector3 offset;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    private static Camera cameraInstance;
+    void Awake()
+    {
+        DontDestroyOnLoad(cameraInstance);
+
+        if (cameraInstance == null)
+        {
+            cameraInstance = Camera.main;
+        }
+        else
+        {
+            DestroyObject(gameObject);
+        }
+    }
+    void Start () {
+		player = GameObject.Find ("Player");
         offset = transform.position - player.transform.position;
 	}
 	

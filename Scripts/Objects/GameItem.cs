@@ -1,49 +1,52 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+/// <summary>
+/// Instantiates collectibles in the game
+/// </summary>
 public class GameItem : MonoBehaviour{
 
-	public Sprite sprite;
-	//public GameObject itemObject = new GameObject();
-	private GameItem item;
 	public GameObject BurgerItem;
-	Inventory inv = new Inventory();
-
-
-	public GameItem()
-	{
-	}
-
+	public GameObject StoreroomKey;
+	public GameObject RoofKey;
+	/// <summary>
+	/// Checks the active scene and instantiates the items in the scene.
+	/// </summary>
 	void Start()
 	{
-		Instantiate(BurgerItem, new Vector3(1, 1), Quaternion.identity);
+		Scene currentScene = SceneManager.GetActiveScene ();
+		string sceneName = currentScene.name;
 
+		if (sceneName == "Main") {
+			Instantiate(BurgerItem, new Vector3(-0.54f, -0.05f), Quaternion.identity);
+			Instantiate(BurgerItem, new Vector3(0.57f, -0.05f), Quaternion.identity);
+			Instantiate(BurgerItem, new Vector3(1.17f, -0.05f), Quaternion.identity);
+			Instantiate(BurgerItem, new Vector3(1.8f, -0.05f), Quaternion.identity);
 
+		}
+		if (sceneName == "Kitchen") {
+			Instantiate(BurgerItem, new Vector3(0f, 0.5f), Quaternion.identity);
+			Instantiate(BurgerItem, new Vector3(0f, 0.6f), Quaternion.identity);
+			Instantiate(BurgerItem, new Vector3(0.1f, 0.5f), Quaternion.identity);
+			Instantiate(BurgerItem, new Vector3(0.1f, 0.6f), Quaternion.identity);
+
+		}
+
+		if (sceneName == "Storeroom") {
+			Instantiate(RoofKey, new Vector3(-1.4f, 0.36f), Quaternion.identity);
+
+		}
+		if (sceneName == "Toilets") {
+			Instantiate(StoreroomKey, new Vector3(1.8f, 1.05f), Quaternion.identity);
+
+		}
+			
 	}
 
     public void SetName(string name)
     {
         this.name = name;
     }
-	
-    public string GetName()
-    {
-        return this.name;
-    }
 
-	void OnTriggerEnter2D(Collider2D other)
-	{
-
-
-
-		if (other.gameObject.tag == "Player")
-		{
-			inv.AddItem (gameObject);
-			Debug.Log ("picked up item");
-			//Destroy (gameObject);
-		}
-			
-	}
-		
 }

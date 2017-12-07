@@ -1,11 +1,14 @@
 fileFormatVersion: 2
 guid: 9a35add0a3df3a148a4e11c4050a7743
-timeCreated: 1510652879
+timeCreated: 1511946345
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - BurgerItem: {instanceID: 0}
+  - StoreroomKey: {fileID: 1647116310596358, guid: 982c84253ed510f4ea87c6d05204cc24,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

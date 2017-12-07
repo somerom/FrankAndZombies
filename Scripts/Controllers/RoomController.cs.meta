@@ -1,11 +1,14 @@
 fileFormatVersion: 2
 guid: b74234d3064c92d49aaf3a464cbfea23
-timeCreated: 1511252871
+timeCreated: 1511942896
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - StoreroomKey: {fileID: 1647116310596358, guid: 982c84253ed510f4ea87c6d05204cc24,
+      type: 2}
+  - RoofKey: {fileID: 1290325135329628, guid: 00eb80dd487c7594f9a152c681b552ad, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

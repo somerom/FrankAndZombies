@@ -1,11 +1,15 @@
 fileFormatVersion: 2
 guid: 9f2a76fc221e6e84688a7efbe5f25461
-timeCreated: 1511167987
+timeCreated: 1511865433
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {instanceID: 0}
+  - rb: {instanceID: 0}
+  - BurgerBullet: {instanceID: 0}
+  - burger: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
