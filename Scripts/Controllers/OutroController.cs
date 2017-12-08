@@ -4,10 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// controlls outro scene
+/// </summary>
 public class OutroController : MonoBehaviour {
 
     private Button ok;
 	// Use this for initialization
+    /// <summary>
+    /// finds reference to button
+    /// </summary>
 	void Start () {
 		ok = GameObject.Find("Ok").GetComponent<Button>();
         ok.onClick.AddListener(() => ButtonPressed());
@@ -17,6 +23,9 @@ public class OutroController : MonoBehaviour {
 	void Update () {
 		
 	}
+    /// <summary>
+    /// loads end scene after clicking the button
+    /// </summary>
     public void ButtonPressed()
     {
         SceneManager.LoadScene("End");

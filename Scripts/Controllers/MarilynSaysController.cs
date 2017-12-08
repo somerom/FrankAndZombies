@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+/// <summary>
+/// Controlls npc marilyns lines
+/// </summary>
 public class MarilynSaysController : MonoBehaviour {
 
     public int position = 0;
-    private List<GameObject> texts = new List<GameObject>();
     private GameObject m1;
     private GameObject m2;
     private GameObject m3;
     private GameObject m4;
     private GameObject m5;
-
-
-
-
-
-
     private Button ok;
+
+    /// <summary>
+    /// finds textelements and set all but first unactive
+    /// takes reference to button and adds  to it a listener
+    /// </summary>
     void Start()
     {
         m1 = GameObject.Find("M1");
@@ -35,7 +35,10 @@ public class MarilynSaysController : MonoBehaviour {
         m5.SetActive(false);
         ok.onClick.AddListener(()=>ButtonPressed());
     }
-
+    /// <summary>
+    /// after click sets next text paragraph active to screen
+    /// after last text returns to game in the scene where dialogue started
+    /// </summary>
     public void ButtonPressed()
     {
         if(position == 0)

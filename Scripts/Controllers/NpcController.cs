@@ -4,9 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+/// <summary>
+/// cotrolls meeting npc
+/// </summary>
 public class NpcController : MonoBehaviour
 {
+    
+   /// <summary>
+   /// when player meets npc moves to the right dialoguescene
+   /// </summary>
+   /// <param name="collision"></param>
 
     void OnCollisionEnter2D(Collision2D collision)
     {

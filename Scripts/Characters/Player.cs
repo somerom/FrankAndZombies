@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// controlls the player
+/// </summary>
 public class Player : MonoBehaviour {
 
     public int intro = 0;
@@ -14,8 +17,10 @@ public class Player : MonoBehaviour {
 	public AudioClip KeyPickup;
 	public AudioClip HitSound;
 	public AudioSource source;
-
     private static Player playerInstance;
+    /// <summary>
+    /// keeps the player singleton so that ther can be only on instance of the object at one time
+    /// </summary>
     void Awake()
     {
         DontDestroyOnLoad(this);

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+/// <summary>
+/// controlls intro scene
+/// </summary>
 public class IntroOutroController : MonoBehaviour {
 
     private Button ok;
@@ -12,6 +14,9 @@ public class IntroOutroController : MonoBehaviour {
     private Camera camera1;
 
     // Use this for initialization
+    /// <summary>
+    /// finds objects and calls method after button pressed
+    /// </summary>
     void Start () {
 
         player1 = GameObject.Find("Player");
@@ -27,6 +32,9 @@ public class IntroOutroController : MonoBehaviour {
 		
 	}
      
+    /// <summary>
+    /// loads main scene after button click
+    /// </summary>
     public void ButtonPerssed()
     {
         DontDestroyOnLoad(camera1);

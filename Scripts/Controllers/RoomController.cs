@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class RoomController : MonoBehaviour {
     
-    private Camera camera;
+    private Camera camera1;
     private GameObject canvase;
     private GameObject player1;
 	private GameObject canvas;
@@ -18,7 +18,7 @@ public class RoomController : MonoBehaviour {
     void Start () {
 
         player1 = GameObject.Find("Player");
-        camera = Camera.main;
+        camera1 = Camera.main;
         canvase = GameObject.Find("Canvas2");
 		inv = GameObject.Find ("Player").GetComponent<Inventory> ();
 
@@ -29,13 +29,17 @@ public class RoomController : MonoBehaviour {
 	void Update () {
        
     }
+    /// <summary>
+    /// controlls entering to next scene, uses Unity oncollaisionenter2d method and dontdestroyonload method whitch keep the objects in witch used to survive thorugh scenes 
+    /// </summary>
+    /// <param name="collision"></param>
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Roof")
         {
 
 			if (inv.RoofKeyCheck () == true) {
-				DontDestroyOnLoad (camera);
+				DontDestroyOnLoad (camera1);
 				DontDestroyOnLoad (player1);
 				DontDestroyOnLoad (canvase);
 				inv.LockTextReset ();
@@ -49,7 +53,7 @@ public class RoomController : MonoBehaviour {
         }
         if (collision.gameObject.name == "Toilets")
         {
-            DontDestroyOnLoad(camera);
+            DontDestroyOnLoad(camera1);
             DontDestroyOnLoad(player1);
 			DontDestroyOnLoad (canvase);
             SceneManager.LoadScene("Toilets");
@@ -59,7 +63,7 @@ public class RoomController : MonoBehaviour {
         }
         if (collision.gameObject.name == "Maint")
         {
-            DontDestroyOnLoad(camera);
+            DontDestroyOnLoad(camera1);
             DontDestroyOnLoad(player1);
 			DontDestroyOnLoad (canvase);
             SceneManager.LoadScene("Main");
@@ -70,7 +74,7 @@ public class RoomController : MonoBehaviour {
         {
 
 
-            DontDestroyOnLoad(camera);
+            DontDestroyOnLoad(camera1);
             DontDestroyOnLoad(player1);
 			DontDestroyOnLoad (canvase);
 			inv.LockTextReset ();
@@ -82,7 +86,7 @@ public class RoomController : MonoBehaviour {
         if (collision.gameObject.name == "Storeroomr")
         {
 			
-            DontDestroyOnLoad(camera);
+            DontDestroyOnLoad(camera1);
             DontDestroyOnLoad(player1);
 			DontDestroyOnLoad (canvase);
 			Vector3 v = new Vector3(-0.85f, 0.70f);
@@ -93,7 +97,7 @@ public class RoomController : MonoBehaviour {
         if (collision.gameObject.name == "Storeroomk")
         {
 			if (inv.StoreKeyCheck () == true) {
-				DontDestroyOnLoad (camera);
+				DontDestroyOnLoad (camera1);
 				DontDestroyOnLoad (player1);
 				DontDestroyOnLoad (canvase);
 				SceneManager.LoadScene ("Storeroom");
@@ -106,7 +110,7 @@ public class RoomController : MonoBehaviour {
         }
         if (collision.gameObject.name == "Kitchens")
         {
-            DontDestroyOnLoad(camera);
+            DontDestroyOnLoad(camera1);
             DontDestroyOnLoad(player1);
 			DontDestroyOnLoad (canvase);
 			inv.LockTextReset ();
@@ -116,7 +120,7 @@ public class RoomController : MonoBehaviour {
         }
         if (collision.gameObject.name == "Kitchenm")
         {
-            DontDestroyOnLoad(camera);
+            DontDestroyOnLoad(camera1);
             DontDestroyOnLoad(player1);
 			DontDestroyOnLoad (canvase);
             SceneManager.LoadScene("Kitchen");
@@ -127,14 +131,10 @@ public class RoomController : MonoBehaviour {
 		if (collision.gameObject.name == "End") 
 
 		{
-            End();
-		}
+            SceneManager.LoadScene("Outro");
+        }
     }
-    public void End()
-    {
-        SceneManager.LoadScene("Outro");        
-    }
-
+    
     
 }
 

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+/// <summary>
+/// controlls npc codys lines
+/// </summary>
 public class CodySaysController : MonoBehaviour {
 
     public int position = 0;
@@ -12,8 +14,11 @@ public class CodySaysController : MonoBehaviour {
     private GameObject m3;
     private GameObject m4;
     private GameObject m5;
-
     private Button ok;
+
+    /// <summary>
+    /// finds five text objects and button ok. sets first text active and ohters unactive
+    /// </summary>
     void Start()
     {
         m1 = GameObject.Find("M1");
@@ -30,6 +35,9 @@ public class CodySaysController : MonoBehaviour {
         ok.onClick.AddListener(() => ButtonPressed());
     }
 		
+    /// <summary>
+    /// sets next text object active after click, after last text returns the game where dialogue started.
+    /// </summary>
     public void ButtonPressed()
     {
         if (position == 0)
